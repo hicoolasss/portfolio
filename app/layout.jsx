@@ -1,7 +1,23 @@
 import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+export const offBit = localFont({
+  src: [
+    {
+      path: '../public/resources/fonts/PTF-OffBit-Trial/PTF-OffBit-Trial/PTF-OffBit-Trial TTF/OffBitTrial-101.ttf',
+      style: '101',
+    },
+    {
+      path: '../public/resources/fonts/PTF-OffBit-Trial/PTF-OffBit-Trial/PTF-OffBit-Trial TTF/OffBitTrial-Dot.ttf',
+      style: 'dot',
+    },
+  ],
+})
+
+
+
 import { ThemeProvider } from '../components/theme-provider'
 
 export const metadata = {
