@@ -30,6 +30,7 @@ export const offBitRegular = localFont({
     {
       path: '../public/resources/fonts/PTF-OffBit-Trial/PTF-OffBit-Trial/PTF-OffBit-Trial TTF/OffBitTrial-Regular.ttf',
       style: '101',
+      subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
     },
     // другие шрифты
   ],
