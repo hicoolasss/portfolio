@@ -69,6 +69,7 @@
 
     --gray: #888888;
     --highlight: #ff0080;
+    --highlight-accent: #ffc6ec;
     --warning: #f5a623;
 
     --primary-color: #5c5c5c;
@@ -132,7 +133,7 @@
   background: transparent;
   border: none;
   position: relative;
-  font-family: JetBrains Mono, monospace;
+  /* font-family: JetBrains Mono, monospace; */
   color: #f0f0f0;
   z-index: 1;
 }

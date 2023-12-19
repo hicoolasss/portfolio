@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const JetBrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 export default function Navbar() {
     return (
-        <header className="w-full flex flex-col bg-background z-100">
+        <header className="w-full fixed flex-col bg-background z-50 ">
             <nav className="flex flex-row items-center h-20 mx-5 md:mx-32 lg:mx-64 justify-between">
                 <motion.div
                     whileHover={{ rotate: 15, scale: 1.5 }}

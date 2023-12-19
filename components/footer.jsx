@@ -1,7 +1,7 @@
 import Link from 'next/link'
 export default function Footer() {
     return (
-        <footer className="w-full h-16 px-4 md:px-6 flex items-center justify-between border-t border-zinc-200 dark:border-zinc-800">
+        <footer className="w-full h-[80px] px-4 md:px-6 flex items-center justify-between border-t border-zinc-200 dark:border-zinc-800">
             <p className="text-sm text-zinc-500 dark:text-zinc-400">© 2023 Serikov Ilya. All rights reserved.</p>
             <nav className="hidden lg:flex space-x-4">
                 <Link

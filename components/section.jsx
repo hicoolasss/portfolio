@@ -1,26 +1,39 @@
 import React from "react";
 import { offBit, offBitDot, offBitDotBold, offBitRegular, offBitBold } from '../app/layout'
 import { Separator } from "./ui/separator";
-import { JetBrainsMono } from "@/app/page";
-import { Badge } from "./ui/badge";
+import Image from "next/image";
 
-export default function Section({ title, content, images, badge_text }) {
+const usof = "/resources/images/usof.png"
+
+export default function Section({ title, content, image }) {
     return (
         <>
-            <Separator />
-            <div className="flex flex-col items-start justify-start w-full px-4 md:px-32 lg:px-64 mt-12">
-                <div className="flex flex-col items-start justify-start w-full px-4 mx-auto gap-5">
+            <Separator className="mt-12" />
+            <div className="pl-20 md:pl-48 flex flex-row items-start justify-start w-full mt-12 gap-12">
+                <div className="flex flex-col items-start justify-start gap-5">
                     <div className="flex flex-row gap-5">
-                        <p className={`${offBitBold.className} text-3xl uppercase text-center md:text-4xl`}>
+                        <p className={`${offBitBold.className} text-3xl uppercase text-center text-highlight md:text-4xl`}>
                             {title}
                         </p>
-                        <Badge className="bg-cyan font-bold text-md">{badge_text}</Badge>
+                        {/* <div className={`${JetBrainsMono.className} rounded-full text-xl px-4 flex items-center text-center bg-violet text-color`}>{badge_text}</div> */}
                     </div>
-                    <p className={`text-sm text-center text-gray`} >
+                    <p className={`text-md text-start text-gray max-w-[400px]`} >
                         {content}
                     </p>
-
                 </div>
+                {/* <div className="grid grid-cols-3 grid-rows-2 gap-4 bg-secondary_background_color rounded-lg p-5"> */}
+                <div className="lg:flex hidden ml-96">
+                    <Image
+                        quality={100}
+                        alt="image"
+                        src={usof}
+                        width={600}
+                        height={600}
+                        className="rounded-lg max-w-[600px] max-h-[600px]"
+
+                    ></Image>
+                </div>
+                {/* </div> */}
 
             </div>
         </>
