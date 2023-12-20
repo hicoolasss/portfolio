@@ -128,60 +128,21 @@
 }
 
 .button {
-  padding: 15px 20px;
-  font-size: 16px;
+  @apply text-base relative text-[#f0f0f0] z-[1] px-5 py-[15px] border-[none] before:translate-x-[0%] before:translate-y-[0%] before:w-full before:h-full before:rounded-[10px] after:translate-x-2.5 after:translate-y-2.5 after:w-[35px] after:h-[35px] after:backdrop-blur-[5px] after:rounded-[50px] hover:before:translate-x-[5%] hover:before:translate-y-[20%] hover:before:w-[110%] hover:before:h-[110%] hover:after:translate-x-0 hover:after:translate-y-0 hover:after:w-full hover:after:h-full hover:after:rounded-[10px] active:after:transition-[0s] active:after:translate-x-0 active:after:translate-y-[5%];
   background: transparent;
-  border: none;
-  position: relative;
   /* font-family: JetBrains Mono, monospace; */
-  color: #f0f0f0;
-  z-index: 1;
 }
-
 .button::after,
 .button::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -99999;
-  transition: all .4s;
+  @apply content-[''] absolute z-[-99999] transition-all duration-400 right-0 bottom-0;
 }
-
 .button::before {
-  transform: translate(0%, 0%);
-  width: 100%;
-  height: 100%;
   background: #28282d;
-  border-radius: 10px;
 }
-
 .button::after {
-  transform: translate(10px, 10px);
-  width: 35px;
-  height: 35px;
   background: #ffffff15;
-  backdrop-filter: blur(5px);
-  border-radius: 50px;
 }
 
-.button:hover::before {
-  transform: translate(5%, 20%);
-  width: 110%;
-  height: 110%;
-}
-
-.button:hover::after {
-  border-radius: 10px;
-  transform: translate(0, 0);
-  width: 100%;
-  height: 100%;
-}
-
-.button:active::after {
-  transition: 0s;
-  transform: translate(0, 5%);
-}
 
 @layer base {
   * {

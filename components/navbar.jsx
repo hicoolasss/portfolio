@@ -6,10 +6,16 @@ import { JetBrains_Mono } from 'next/font/google'
 import { Separator } from "./ui/separator";
 import { ModeToggle } from "./mode-toogle";
 import { motion } from "framer-motion";
-
+import { usePathname } from 'next/navigation'
 
 const JetBrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 export default function Navbar() {
+    const pathname = usePathname()
+
+    const isActive = (path) => {
+        return pathname === path
+    }
+
     return (
         <header className="w-full fixed flex-col bg-background z-50 ">
             <nav className="flex flex-row items-center h-20 mx-5 md:mx-32 lg:mx-64 justify-between">
@@ -21,10 +27,15 @@ export default function Navbar() {
                     </Link>
                 </motion.div>
                 <div className="flex gap-3 lg:gap-10 items-center justify-center">
-                    <Link href="/about" className={`${JetBrainsMono.className} text-md lg:text-l hovered_text relative`}>
+                    <Link href="/about"
+                        // className={`${JetBrainsMono.className} text-md lg:text-l hovered_text relative`} text-zinc-600 dark:text-zinc-400
+                        className={`${JetBrainsMono.className} text-md lg:text-l hovered_text relative ${isActive('/about') ? 'text-color' : 'text-zinc-600 dark:text-zinc-400'}`}
+                    >
                         About
                     </Link>
-                    <Link href="/contact" className={`${JetBrainsMono.className} text-md lg:text-l hovered_text relative`}>
+                    <Link href="/contacts"
+                        className={`${JetBrainsMono.className} text-md lg:text-l hovered_text relative ${isActive('/contacts') ? 'text-color' : 'text-zinc-600 dark:text-zinc-400'}`}
+                    >
                         Contacts
                     </Link>
                     <ModeToggle />

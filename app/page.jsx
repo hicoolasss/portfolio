@@ -88,10 +88,8 @@ export default function Home() {
   }
 
   return (
-    <div className="relative flex flex-col min-h-screen bg-background ">
-      <Navbar />
-      <main className="flex-grow py-8 px-4 ">
-        <section className="flex-grow mt-6 h-full">
+    <>
+    
           <div className='flex flex-col items-center justify-center 2xl:flex-row'>
             <div className='mt-12 p-6 sm:p-0 sm:max-w-[500px] xl:max-w-none'>
               <div className={`${offBitRegular.className} text-7xl flex-col gap-5 hidden xl:flex `}>
@@ -153,7 +151,8 @@ export default function Home() {
               <p className={`w-full text-sm md:text-xl mt-5 md:mt-12 max-w-[800px] text-gray`}>
                 I build cool and user-friendly websites that look great and work smoothly. Using the latest technology, I ensure that your site is both awesome and super fast. Let&apos;s make your online dream a reality!
               </p>
-              <button className='button mt-5 md:mt-12 font-bold'>Work with me</button>
+              <button className='button mt-5 md:mt-12 font-bold p-5'>Work with me</button>
+              
             </div>
 
             <Globe className={"hidden 2xl:flex 2xl:w-[600px] 2xl:h-[600px]"} width={600} height={600}></Globe>
@@ -162,12 +161,10 @@ export default function Home() {
             <Globe className={"sm:hidden flex w-[300px] h-[300px]"} width={300} height={300}></Globe>
 
           </div>
-        </section>
-        <Section title={"Smack Overslow"} content={"Smack Overslow is a super friendly platform for sharing knowledge. You can join in conversations by asking questions, leaving comments, giving ratings to posts, using filters, and customizing your profile."} badge_text={"Q&A Platform"}  />
         
-      </main>
-      <Footer />
-    </div>
+        <Section title={"Smack Overslow"} content={"Smack Overslow is a super friendly platform for sharing knowledge. You can join in conversations by asking questions, leaving comments, giving ratings to posts, using filters, and customizing your profile."} badge_text={"Q&A Platform"}  />
+        </>
+      
 
   )
 }
