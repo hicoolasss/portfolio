@@ -39,6 +39,8 @@ module.exports = {
         secondary_color: "var(--secondary-color)",
         accent_color: "var(--accent-color)",
         secondary_background_color: "var(--secondary-background-color)",
+        background_color1: "var(--background-color1)",
+        highlight_accent: "var(--highlight-accent)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

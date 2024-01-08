@@ -151,7 +151,7 @@ export default function Home() {
               <p className={`w-full text-sm md:text-xl mt-5 md:mt-12 max-w-[800px] text-gray`}>
                 I build cool and user-friendly websites that look great and work smoothly. Using the latest technology, I ensure that your site is both awesome and super fast. Let&apos;s make your online dream a reality!
               </p>
-              <button className='button mt-5 md:mt-12 font-bold p-5'>Work with me</button>
+              {/* <button className='button mt-5 md:mt-12 font-bold p-5'>Work with me</button> */}
               
             </div>
 
