@@ -80,6 +80,7 @@
 
 
     --gradient: linear-gradient(to bottom, #000000, #141415 , #000000);
+    --gradient2: linear-gradient(to bottom, #c50054, #ff0080 , #c50054);
   }
   
 }

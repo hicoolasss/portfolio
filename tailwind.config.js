@@ -72,6 +72,11 @@ module.exports = {
       },
       backgroundImage: {
         'gradient': "var(--gradient)",
+        'gradient2': "var(--gradient2)",
+        'fas': "url('/resources/images/7971.jpg')",
+        'bg1': "url('/resources/images/bg1.svg')",
+        'bg2': "url('/resources/images/bg2.svg')",
+        
       },
       borderRadius: {
         lg: "var(--radius)",
