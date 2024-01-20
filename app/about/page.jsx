@@ -6,8 +6,8 @@ import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image';
-import { Target } from 'lucide-react';
-
+import { Target, Clock, PersonStanding } from 'lucide-react';
+import { Wand2 } from 'lucide-react';
 import Card from '@/components/card';
 
 
@@ -195,36 +195,51 @@ export default function AboutPage() {
             </div>
             <p className={`${offBitRegular.className} text-9xl text-center `}>How I like to work</p>
             {/* <p className={`${offBitBold.className} text-3xl text-center `}>To implement the project successfully, I need a clear project brief from the client with the following details:</p> */}
-            
-            <div className="grid grid-cols-6 grid-rows-2 gap-6 mx-20 mb-24 mt-24">
+
+            <div className="grid grid-cols-6 grid-rows-2 gap-12  mb-24 mt-24">
                 <div className="col-span-2 col-start-2">
-                    <Card className="" 
-                    Icon={Target} 
-                    title={"Purpose of the Website"} 
-                    description={"Define the main goal and functionality."}
-                    content={"Once you have provided an overview of your project's main objective, I can assist you in identifying a more efficient and appropriate approach for its development."}
+                    <Card className=""
+                        Icon={Target}
+                        title={"Purpose of the Website"}
+                        description={"Define the main goal and functionality."}
+                        content={"Once you have provided an overview of your project's main objective, I can assist you in identifying a more efficient and appropriate approach for its development."}
                     >
-                        
+
 
                     </Card>
                 </div>
                 <div className="col-span-2 col-start-4">
-                    {/* <Card className="">
-                      
+                    <Card className=""
+                        Icon={Wand2}
+                        title={"Design Preferences:"}
+                        description={"Specify design preferences, including examples or preferences for light or dark theme."}
+                        content={"Design is an important part of a website. Please try to clearly explain what you want in a precise manner."}
+                    >
 
-                    </Card> */}
+
+                    </Card>
                 </div>
                 <div className="col-span-2 col-start-2 row-start-2">
-                    {/* <Card className="">
-                       
+                <Card className=""
+                        Icon={Clock}
+                        title={"Timeline:"}
+                        description={"Establish project deadlines and milestones"}
+                        content={"If you provide me with a reasonable deadline, I can ensure the swift development of a high-quality website. "}
+                    >
 
-                    </Card> */}
+
+                    </Card>
                 </div>
                 <div className="col-span-2 col-start-4 row-start-2">
-                    {/* <Card className="">
-                       
+                <Card className=""
+                        Icon={PersonStanding}
+                        title={"Target Audience:"}
+                        description={"Identify the intended users and target audience."}
+                        content={"Understanding and prioritizing the target audience is paramount in web development. The success of a website hinges on its ability to resonate with and cater to the specific needs and preferences of the intended users. "}
+                    >
 
-                    </Card> */}
+
+                    </Card>
                 </div>
             </div>
         </>
