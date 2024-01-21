@@ -23,7 +23,7 @@ export default function AboutPage() {
             <div className="w-full h-full flex flex-col items-center justify-center">
                 <h1 className={`${offBitDotBold.className} text-7xl mt-24 text-center`}>Ilya Serikov</h1>
             </div>
-            <div className="grid grid-cols-5 grid-rows-2 gap-5 mx-20 mb-24">
+            <div className="grid grid-cols-3 2xl:grid-cols-5 grid-rows-3 xl:grid-rows-2 gap-5 mx-20 mb-24">
                 <div className="p-10 rounded-2xl text-accent_color mt-24  bg-bg1 flex flex-col gap-5 col-span-3 row-span-1 ">
                     <p className="text-4xl text-foreground ">
                         <span className={`${offBitDotBold.className}`}>Hello there! </span>
@@ -32,7 +32,7 @@ export default function AboutPage() {
                     <p className="text-start text-l">My name is Ilya Serikov, and I&apos;m a beginner web developer. You might have come across some of my projects already. I have hands-on experience in building both the frontend and backend parts of an application, and I also have some decent design skills.</p>
                 </div>
 
-                <div className="p-10 rounded-2xl text-accent_color mt-24  bg-gradient flex flex-col gap-5 col-span-2 row-span-2 col-start-4">
+                <div className="p-10 rounded-2xl text-accent_color 2xl:mt-24  bg-gradient flex flex-col gap-5 col-span-3 row-span-2 2xl:col-start-4 row-start-3 2xl:row-start-1">
                     <p className={`${offBitBold.className} uppercase text-4xl text-color flex items-end gap-2 `}>
                         <svg
                             width="48px"
@@ -62,66 +62,66 @@ export default function AboutPage() {
                         Skills
                     </p>
 
-                    <div className="grid grid-cols-3 grid-rows-3 gap-5  w-full  p-10  text-neutral-300 mt-12">
+                    <div className="grid grid-cols-3 grid-rows-3 lg:gap-5 gap-2 w-full lg:p-10  text-neutral-300 font-semibold mt-12">
                         <Link href="https://nextjs.org/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background p-4 rounded-3xl items-center pl-8 flex gap-2">
+                                className="border border-solid border-secondary_background p-4 rounded-3xl items-center lg:pl-8 flex gap-2">
                                 <NextJsLogo />
                                 NEXT.js</motion.div>
 
                         </Link>
                         <Link href="https://react.dev/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-1 row-start-2  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-1 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <ReactLogo />
                                 React</motion.div>
                         </Link>
                         <Link href="https://nodejs.org/en">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-1 row-start-3  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-1 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <NodeJsLogo />
                                 Node.js</motion.div>
                         </Link>
                         <Link href="https://github.com/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-2 row-start-1  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-2 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <GithubLogo />
                                 Github</motion.div>
                         </Link>
                         <Link href="https://www.figma.com/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-2 row-start-2  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-2 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <FigmaLogo />
                                 Figma</motion.div>
                         </Link>
                         <Link href="https://www.notion.so/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-2 row-start-3  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-2 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <NotionLogo />
                                 Notion</motion.div>
                         </Link>
                         <Link href="https://framer.com/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-3 row-start-1  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-3 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <FramerLogo />
                                 Framer</motion.div>
                         </Link>
                         <Link href="https://www.realtimecolors.com/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-3 row-start-2  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background col-start-3 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <UiUxDesign />
                                 Design</motion.div>
                         </Link>
                         <Link href="https://www.mongodb.com/">
                             <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background row-start-3  p-4 rounded-3xl pl-8 items-center flex gap-2">
+                                className="border border-solid border-secondary_background row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
                                 <MongodbLogo />
                                 Mongodb</motion.div>
                         </Link>
                     </div>
                 </div>
                 <Image
-                    className='rounded-md mt-5'
+                    className='rounded-md mt-5 row-start-2'
                     src="/resources/images/me4.jpg"
                     width={350}
                     height={250}
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
-                    className='mt-5'
+                    className='mt-5 row-start-2'
                     viewBox="0 0 800 800"
                 >
                     <defs>
@@ -183,7 +183,7 @@ export default function AboutPage() {
                 </svg>
 
                 <Image
-                    className='rounded-md mt-5'
+                    className='rounded-md mt-5 row-start-2'
                     src="/resources/images/me3.jpg"
                     width={350}
                     height={250}
@@ -193,10 +193,10 @@ export default function AboutPage() {
                 </Image>
                 {/* <div className='w-full row-start-3 col-span-2 bg-fas rounded-lg  h-full mt-5'></div> */}
             </div>
-            <p className={`${offBitRegular.className} text-9xl text-center `}>How I like to work</p>
+            <p className={`${offBitRegular.className} lg:text-9xl text-6xl text-center  `}>How I like to work</p>
             {/* <p className={`${offBitBold.className} text-3xl text-center `}>To implement the project successfully, I need a clear project brief from the client with the following details:</p> */}
 
-            <div className="grid grid-cols-6 grid-rows-2 gap-12  mb-24 mt-24">
+            <div className="grid lg:grid-cols-6 grid-rows-2 gap-12  mb-24 mt-24">
                 <div className="col-span-2 col-start-2">
                     <Card className=""
                         Icon={Target}
