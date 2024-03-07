@@ -7,8 +7,17 @@ import { Separator } from "./ui/separator";
 import { ModeToggle } from "./mode-toogle";
 import { motion } from "framer-motion";
 import { usePathname } from 'next/navigation'
+import localFont from 'next/font/local'
 
-const JetBrainsMono = JetBrains_Mono({ subsets: ['latin'] })
+const JetBrainsMono = localFont({
+    src: [
+      {
+        path: '../public/resources/fonts/JetBrainsMono-2.304/fonts/ttf/JetBrainsMono-Regular.ttf',
+        style: 'jetbrains',
+      },
+      // другие шрифты
+    ],
+  });
 export default function Navbar() {
     const pathname = usePathname()
 

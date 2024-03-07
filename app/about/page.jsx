@@ -9,21 +9,91 @@ import Image from 'next/image';
 import { Target, Clock, PersonStanding } from 'lucide-react';
 import { Wand2 } from 'lucide-react';
 import Card from '@/components/card';
+import { useState } from 'react';
+import useMouse from "@react-hook/mouse-position";
 
 
 export default function AboutPage() {
-    const images = [
-        "/resources/images/me4.jpg",
-        "/resources/images/me3.jpg",
-        "/resources/images/81719.jpg",
-        "/resources/images/7971.jpg",
-    ]
+    const [cursorVariant, setCursorVariant] = useState("default");
+    const CursorRef = React.useRef(null);
+
+    const ref = React.useRef(null);
+    const mouse = useMouse(ref, {
+        enterDelay: 100,
+        leaveDelay: 100
+    });
+
+    let mouseXPosition = 0;
+    let mouseYPosition = 0;
+
+    if (mouse.x !== null) {
+        mouseXPosition = mouse.clientX;
+    }
+
+    if (mouse.y !== null) {
+        mouseYPosition = mouse.clientY;
+    }
+
+    const variants = {
+        default: {
+            opacity: 0,
+            height: 10,
+            width: 10,
+            fontSize: "16px",
+            backgroundColor: "#ff0080",
+            x: mouseXPosition || 500,
+            y: mouseYPosition || 500,
+            transition: {
+                type: "spring",
+                mass: 0.6
+            }
+        },
+        project: {
+            opacity: 1,
+            backgroundColor: "#ff0080",
+            color: "#000",
+            height: 80,
+            width: 80,
+            fontSize: "18px",
+            x: mouseXPosition - 36,
+            y: mouseYPosition - 36
+        },
+        button: {
+            opacity: 1,
+            backgroundColor: "#ff0080",
+            color: "#000",
+            height: 55,
+            width: 55,
+            zIndex: 0,
+            backdropFilter: "blur(10px)",
+            fontSize: "18px",
+            x: mouseXPosition - 24,
+            y: mouseYPosition - 24
+        },
+    };
+
+    const spring = {
+        type: "spring",
+        stiffness: 500,
+        damping: 28
+    };
+
+   
+    function buttonEnter(event) {
+        setCursorVariant("button");
+        CursorRef.current.classList.add("blur-md");
+    }
+    function buttonLeave(event) {
+        setCursorVariant("default");
+    }
+
+
     return (
         <>
             <div className="w-full h-full flex flex-col items-center justify-center">
                 <h1 className={`${offBitDotBold.className} text-7xl mt-24 text-center`}>Ilya Serikov</h1>
             </div>
-            <div className="grid grid-cols-3 2xl:grid-cols-5 grid-rows-3 xl:grid-rows-2 gap-5 mx-20 mb-24">
+            <div className="grid grid-cols-3 2xl:grid-cols-5 grid-rows-3 xl:grid-rows-2 gap-5 mx-20 mb-24" ref={ref}>
                 <div className="p-10 rounded-2xl text-accent_color mt-24  bg-bg1 flex flex-col gap-5 col-span-3 row-span-1 ">
                     <p className="text-4xl text-foreground ">
                         <span className={`${offBitDotBold.className}`}>Hello there! </span>
@@ -61,60 +131,98 @@ export default function AboutPage() {
                         </svg>
                         Skills
                     </p>
-
                     <div className="grid grid-cols-3 grid-rows-3 lg:gap-5 gap-2 w-full lg:p-10  text-neutral-300 font-semibold mt-12">
+                        <motion.div
+                            variants={variants}
+                            className="w-12 h-12 fixed rounded-full bg-white opacity-5 flex top-0 left-0 z-10 pointer-events-none"
+                            animate={cursorVariant}
+                            transition={spring}
+                            ref={CursorRef}
+                        >
+                        </motion.div>
                         <Link href="https://nextjs.org/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background p-4 rounded-3xl items-center lg:pl-8 flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9", }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background p-4 rounded-3xl items-center lg:pl-8 flex gap-2 "
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <NextJsLogo />
-                                NEXT.js</motion.div>
+                                NEXT.js
+
+                            </motion.div>
 
                         </Link>
+
+
                         <Link href="https://react.dev/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-1 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-1 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <ReactLogo />
                                 React</motion.div>
                         </Link>
                         <Link href="https://nodejs.org/en">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-1 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-1 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <NodeJsLogo />
                                 Node.js</motion.div>
                         </Link>
                         <Link href="https://github.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-2 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-2 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <GithubLogo />
                                 Github</motion.div>
                         </Link>
                         <Link href="https://www.figma.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-2 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-2 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <FigmaLogo />
                                 Figma</motion.div>
                         </Link>
                         <Link href="https://www.notion.so/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-2 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-2 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <NotionLogo />
                                 Notion</motion.div>
                         </Link>
                         <Link href="https://framer.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-3 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-3 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <FramerLogo />
                                 Framer</motion.div>
                         </Link>
                         <Link href="https://www.realtimecolors.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background col-start-3 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background col-start-3 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <UiUxDesign />
                                 Design</motion.div>
                         </Link>
                         <Link href="https://www.mongodb.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, backgroundColor: "#ff0080", color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                                className="border border-solid border-secondary_background row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2">
+                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                                className="border border-solid border-secondary_background row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
+                                onMouseEnter={buttonEnter}
+                                onMouseLeave={buttonLeave}
+                            >
                                 <MongodbLogo />
                                 Mongodb</motion.div>
                         </Link>
@@ -197,6 +305,7 @@ export default function AboutPage() {
             {/* <p className={`${offBitBold.className} text-3xl text-center `}>To implement the project successfully, I need a clear project brief from the client with the following details:</p> */}
 
             <div className="grid lg:grid-cols-6 grid-rows-2 gap-12  mb-24 mt-24">
+
                 <div className="col-span-2 col-start-2">
                     <Card className=""
                         Icon={Target}
@@ -220,7 +329,7 @@ export default function AboutPage() {
                     </Card>
                 </div>
                 <div className="col-span-2 col-start-2 row-start-2">
-                <Card className=""
+                    <Card className=""
                         Icon={Clock}
                         title={"Timeline:"}
                         description={"Establish project deadlines and milestones"}
@@ -231,7 +340,7 @@ export default function AboutPage() {
                     </Card>
                 </div>
                 <div className="col-span-2 col-start-4 row-start-2">
-                <Card className=""
+                    <Card className=""
                         Icon={PersonStanding}
                         title={"Target Audience:"}
                         description={"Identify the intended users and target audience."}

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: white;
@@ -37,9 +37,9 @@
     --highlight: #ff0080;
     --warning: #f5a623;
 
-    --gradient: linear-gradient(to bottom, #FFFFFF, rgb(229 229 229) , #FFFFFF);
+    --gradient: linear-gradient(to bottom, #FFFFFF, rgb(229 229 229), #FFFFFF);
   }
- 
+
   .dark {
     --background: black;
     --foreground: 0 0% 98%;
@@ -60,7 +60,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-    
+
     --color: white;
     --accent-1: #111;
     --success: #0761d1;
@@ -79,10 +79,10 @@
     --background-color1: #0F0F0F;
 
 
-    --gradient: linear-gradient(to bottom, #000000, #141415 , #000000);
-    --gradient2: linear-gradient(to bottom, #c50054, #ff0080 , #c50054);
+    --gradient: linear-gradient(to bottom, #000000, #141415, #000000);
+    --gradient2: linear-gradient(to bottom, #c50054, #ff0080, #c50054);
   }
-  
+
 }
 
 .hovered_text:focus,
@@ -120,29 +120,25 @@
 }
 
 @keyframes AnimationName {
+
   0%,
   100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
 }
 
-.button {
-  @apply text-base relative text-[#f0f0f0] z-[1] px-5 py-[15px] border-[none] before:translate-x-[0%] before:translate-y-[0%] before:w-full before:h-full before:rounded-[10px] after:translate-x-2.5 after:translate-y-2.5 after:w-[35px] after:h-[35px] after:backdrop-blur-[5px] after:rounded-[50px] hover:before:translate-x-[5%] hover:before:translate-y-[20%] hover:before:w-[110%] hover:before:h-[110%] hover:after:translate-x-0 hover:after:translate-y-0 hover:after:w-full hover:after:h-full hover:after:rounded-[10px] active:after:transition-[0s] active:after:translate-x-0 active:after:translate-y-[5%];
-  background: transparent;
-  /* font-family: JetBrains Mono, monospace; */
-}
-.button::after,
-.button::before {
-  @apply content-[''] absolute z-[-99999] transition-all duration-400 right-0 bottom-0;
-}
-.button::before {
-  background: #28282d;
-}
-.button::after {
-  background: #ffffff15;
+
+
+
+.box {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--accent);
 }
 
 
@@ -150,6 +146,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
