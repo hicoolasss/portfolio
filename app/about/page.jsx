@@ -141,7 +141,7 @@ export default function AboutPage() {
                         >
                         </motion.div>
                         <Link href="https://nextjs.org/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9", }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9", }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background p-4 rounded-3xl items-center lg:pl-8 flex gap-2 "
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -155,7 +155,7 @@ export default function AboutPage() {
 
 
                         <Link href="https://react.dev/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-1 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -164,7 +164,7 @@ export default function AboutPage() {
                                 React</motion.div>
                         </Link>
                         <Link href="https://nodejs.org/en">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-1 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -173,7 +173,7 @@ export default function AboutPage() {
                                 Node.js</motion.div>
                         </Link>
                         <Link href="https://github.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-2 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -182,7 +182,7 @@ export default function AboutPage() {
                                 Github</motion.div>
                         </Link>
                         <Link href="https://www.figma.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-2 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -191,7 +191,7 @@ export default function AboutPage() {
                                 Figma</motion.div>
                         </Link>
                         <Link href="https://www.notion.so/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-2 row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -200,7 +200,7 @@ export default function AboutPage() {
                                 Notion</motion.div>
                         </Link>
                         <Link href="https://framer.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-3 row-start-1  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -209,7 +209,7 @@ export default function AboutPage() {
                                 Framer</motion.div>
                         </Link>
                         <Link href="https://www.realtimecolors.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background col-start-3 row-start-2  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
@@ -218,7 +218,7 @@ export default function AboutPage() {
                                 Design</motion.div>
                         </Link>
                         <Link href="https://www.mongodb.com/">
-                            <motion.div whileHover={{ scale: 1.1, y: -15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                            <motion.div whileHover={{ scale: 1.15, color: "#f0e0e9" }} transition={{ type: "spring", stiffness: 260, damping: 20 }}
                                 className="border border-solid border-secondary_background row-start-3  p-4 rounded-3xl lg:pl-8 items-center flex gap-2"
                                 onMouseEnter={buttonEnter}
                                 onMouseLeave={buttonLeave}
