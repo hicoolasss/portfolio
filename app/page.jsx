@@ -89,7 +89,6 @@ export default function Home() {
 
   return (
     <>
-    
           <div className='flex flex-col items-center justify-center 2xl:flex-row'>
             <div className='mt-12 p-6 sm:p-0 sm:max-w-[500px] xl:max-w-none'>
               <div className={`${offBitRegular.className} text-7xl flex-col gap-5 hidden xl:flex `}>
