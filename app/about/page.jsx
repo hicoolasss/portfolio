@@ -8,9 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image';
 import { Target, Clock, PersonStanding } from 'lucide-react';
 import { Wand2 } from 'lucide-react';
-import Card from '@/components/card';
+import  CardSpotlight  from '@/components/card';
 import { useState } from 'react';
 import useMouse from "@react-hook/mouse-position";
+import { ButtonGooey } from '@/components/ContactMe';
 
 
 export default function AboutPage() {
@@ -304,10 +305,11 @@ export default function AboutPage() {
             <p className={`${offBitRegular.className} lg:text-9xl text-6xl text-center  `}>How I like to work</p>
             {/* <p className={`${offBitBold.className} text-3xl text-center `}>To implement the project successfully, I need a clear project brief from the client with the following details:</p> */}
 
-            <div className="grid lg:grid-cols-6 grid-rows-2 gap-12  mb-24 mt-24">
+            <div className="grid lg:grid-cols-6 grid-rows-2 gap-12  mt-24">
+                {/* <CardSpotlight className=""></CardSpotlight> */}
 
                 <div className="col-span-2 col-start-2">
-                    <Card className=""
+                    <CardSpotlight className=""
                         Icon={Target}
                         title={"Purpose of the Website"}
                         description={"Define the main goal and functionality."}
@@ -315,10 +317,10 @@ export default function AboutPage() {
                     >
 
 
-                    </Card>
+                    </CardSpotlight>
                 </div>
                 <div className="col-span-2 col-start-4">
-                    <Card className=""
+                    <CardSpotlight className=""
                         Icon={Wand2}
                         title={"Design Preferences:"}
                         description={"Specify design preferences, including examples or preferences for light or dark theme."}
@@ -326,10 +328,10 @@ export default function AboutPage() {
                     >
 
 
-                    </Card>
+                    </CardSpotlight>
                 </div>
                 <div className="col-span-2 col-start-2 row-start-2">
-                    <Card className=""
+                    <CardSpotlight className=""
                         Icon={Clock}
                         title={"Timeline:"}
                         description={"Establish project deadlines and milestones"}
@@ -337,10 +339,10 @@ export default function AboutPage() {
                     >
 
 
-                    </Card>
+                    </CardSpotlight>
                 </div>
                 <div className="col-span-2 col-start-4 row-start-2">
-                    <Card className=""
+                    <CardSpotlight className=""
                         Icon={PersonStanding}
                         title={"Target Audience:"}
                         description={"Identify the intended users and target audience."}
@@ -348,9 +350,10 @@ export default function AboutPage() {
                     >
 
 
-                    </Card>
+                    </CardSpotlight>
                 </div>
             </div>
+            <ButtonGooey />
         </>
     );
 }

@@ -1,22 +1,23 @@
 import Link from 'next/link'
+import { Button } from './ui/button'
 export default function Footer() {
     return (
-        <footer className="w-full h-[80px] px-4 md:px-6 flex items-center justify-between border-t border-zinc-200 dark:border-zinc-800">
-            <p className="text-sm text-zinc-500 dark:text-zinc-400">© 2023 Serikov Ilya. All rights reserved.</p>
-            <nav className="hidden lg:flex space-x-4">
-                <Link
-                    className="text-sm text-zinc-600 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
-                    href="#"
-                >
-                    Terms
-                </Link>
-                <Link
-                    className="text-sm text-zinc-600 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-300"
-                    href="#"
-                >
-                    Privacy
-                </Link>
-            </nav>
+        <footer className="relative px-4 md:px-6 py-8 overflow-x-hidden">
+            <div className="absolute top-0 h-px w-full"
+                style={{ background: 'radial-gradient(50% 100% at 50% 100%, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%)' }} >
+            </div>
+            <div className='w-full h-full flex flex-col items-center justify-center'>
+                <small className="text-sm font-medium leading-none text-muted-foreground">
+                    <span>Made by </span>
+                   
+                    <Link href="/" className='underline underline-offset-4'>
+                        criops
+                    </Link>
+                    <span>.</span>
+                </small>
+
+
+            </div>
         </footer>
     )
 }

@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
         >
            <div className="relative flex flex-col min-h-screen bg-background ">
             <Navbar />
-            <main className="flex-grow py-8 px-4 ">
+            <main className="flex-grow  px-4 ">
                 <section className="flex-grow mt-6 h-full">
                     {children}
                 </section>
