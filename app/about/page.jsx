@@ -102,7 +102,35 @@ export default function AboutPage() {
         setCursorVariant("default");
     }
 
-    {/* <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div> */ }
+    const svgVariants = {
+        animate: (i) => ({
+            scale: [1.05, 1.15, 1.05],
+            transition: {
+                delay: i * 0.1,
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 2,
+                ease: "easeInOut",
+                stiffness: 260,
+                damping: 20,
+
+            }
+        }
+        ),
+    };
+
+    const circles = [
+        { radius: 375, initialOpacity: 0.05 },
+        { radius: 337.5, initialOpacity: 0.16 },
+        { radius: 300, initialOpacity: 0.26 },
+        { radius: 262.5, initialOpacity: 0.37 },
+        { radius: 225, initialOpacity: 0.47 },
+        { radius: 187.5, initialOpacity: 0.58 },
+        { radius: 150, initialOpacity: 0.68 },
+        { radius: 112.5, initialOpacity: 0.79 },
+        { radius: 75, initialOpacity: 0.89 },
+      ];
+
     return (
         <>
 
@@ -298,7 +326,7 @@ export default function AboutPage() {
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
-                    className='mt-5 row-start-2'
+                    className='mt-10 row-start-2'
                     viewBox="0 0 800 800"
                 >
                     <defs>
@@ -309,7 +337,7 @@ export default function AboutPage() {
                         </radialGradient>
                     </defs>
                     <g fill="url(#cccircular-grad)">
-                        <circle r={375} cx={400} cy={400} opacity="0.05" />
+                        {/* <circle r={375} cx={400} cy={400} opacity="0.05" />
                         <circle r="337.5" cx={400} cy={400} opacity="0.16" />
                         <circle r={300} cx={400} cy={400} opacity="0.26" />
                         <circle r="262.5" cx={400} cy={400} opacity="0.37" />
@@ -317,7 +345,20 @@ export default function AboutPage() {
                         <circle r="187.5" cx={400} cy={400} opacity="0.58" />
                         <circle r={150} cx={400} cy={400} opacity="0.68" />
                         <circle r="112.5" cx={400} cy={400} opacity="0.79" />
-                        <circle r={75} cx={400} cy={400} opacity="0.89" />
+                        <circle r={75} cx={400} cy={400} opacity="0.89" /> */}
+                        {circles.map((circle, index,) => (
+                            <motion.circle
+                                key={circle.radius}
+                                r={circle.radius}
+                                cx={400}
+                                cy={400}
+                                variants={svgVariants}
+                                animate="animate"
+                                custom={index}
+                                opacity={circle.initialOpacity}
+                            />
+                        ))}
+
                     </g>
                 </svg>
 

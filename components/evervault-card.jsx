@@ -47,10 +47,10 @@ export const EvervaultCard = ({
                     <div className="relative flex p-10 text-white flex-col gap-10 font-bold ">
                         {/* <div className="absolute w-full h-full dark:bg-black/[0.8] blur-sm rounded-full" /> */}
                         <h1 className="scroll-m-20  font-extrabold tracking-tight lg:text-4xl ">
-                            Development: The Joke Tax Chronicles
+                            Development: How to create a masterpiece?
                         </h1>
                         <span className="dark:text-muted-foreground z-20 text-lg ">
-                        As a professional web developer, I employ the most cutting-edge technologies and marvel at the latest UI/UX trends. Working with me, you can be confident that your application will not only operate swiftly but will also boast a visually stunning appearance.
+                            As a professional web developer, I employ the most cutting-edge technologies and marvel at the latest UI/UX trends. Working with me, you can be confident that your application will not only operate swiftly but will also boast a visually stunning appearance.
                         </span>
                     </div>
                 </div>
