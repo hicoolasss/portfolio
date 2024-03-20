@@ -8,11 +8,17 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image';
 import { Target, Clock, PersonStanding } from 'lucide-react';
 import { Wand2 } from 'lucide-react';
-import  CardSpotlight  from '@/components/card';
+import CardSpotlight from '@/components/card';
 import { useState } from 'react';
 import useMouse from "@react-hook/mouse-position";
 import { ButtonGooey } from '@/components/ContactMe';
-
+import { TypewriterEffectSmooth } from '@/components/typewritter';
+import { Meteors } from '@/components/meteors';
+import { BackgroundBeams } from '@/components/background-beams';
+import { InfiniteSlider } from '@/components/infine-slider';
+import { SparklesCore } from '@/components/sparkles';
+import HoveredButton from '@/components/hovered-button';
+import { EvervaultCard, Icon } from '@/components/evervault-card';
 
 export default function AboutPage() {
     const [cursorVariant, setCursorVariant] = useState("default");
@@ -49,16 +55,6 @@ export default function AboutPage() {
                 mass: 0.6
             }
         },
-        project: {
-            opacity: 1,
-            backgroundColor: "#ff0080",
-            color: "#000",
-            height: 80,
-            width: 80,
-            fontSize: "18px",
-            x: mouseXPosition - 36,
-            y: mouseYPosition - 36
-        },
         button: {
             opacity: 1,
             backgroundColor: "#ff0080",
@@ -79,7 +75,25 @@ export default function AboutPage() {
         damping: 28
     };
 
-   
+    const words = [
+        {
+            text: "Build",
+        },
+        {
+            text: "awesome",
+        },
+        {
+            text: "apps",
+        },
+        {
+            text: "with",
+        },
+        {
+            text: "Criops.",
+            className: `${offBitBold.className} dark:text-highlight `
+        },
+    ];
+
     function buttonEnter(event) {
         setCursorVariant("button");
         CursorRef.current.classList.add("blur-md");
@@ -88,19 +102,59 @@ export default function AboutPage() {
         setCursorVariant("default");
     }
 
-
+    {/* <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div> */ }
     return (
         <>
+
             <div className="w-full h-full flex flex-col items-center justify-center">
-                <h1 className={`${offBitDotBold.className} text-7xl mt-24 text-center`}>Ilya Serikov</h1>
+                {/* <h1 className={`${offBitDotBold.className} text-7xl mt-24 text-center`}>Ilya Serikov</h1> */}
+                <TypewriterEffectSmooth className="mt-24 text-center`" words={words} />
             </div>
-            <div className="grid grid-cols-3 2xl:grid-cols-5 grid-rows-3 xl:grid-rows-2 gap-5 mx-20 mb-24" ref={ref}>
-                <div className="p-10 rounded-2xl text-accent_color mt-24  bg-bg1 flex flex-col gap-5 col-span-3 row-span-1 ">
-                    <p className="text-4xl text-foreground ">
-                        <span className={`${offBitDotBold.className}`}>Hello there! </span>
-                        It&apos;s great to meet you.</p>
-                    <Separator />
-                    <p className="text-start text-l">My name is Ilya Serikov, and I&apos;m a beginner web developer. You might have come across some of my projects already. I have hands-on experience in building both the frontend and backend parts of an application, and I also have some decent design skills.</p>
+            <div className="grid grid-cols-3 2xl:grid-cols-5 grid-rows-3 xl:grid-rows-2 gap-5 mx-20 mb-24"
+                ref={ref}
+            >
+                <div className="mt-24 flex flex-col relative gap-5 col-span-3 row-span-1 justify-center items-center ">
+
+                    {/* <div className="w-full h-full dark:bg-black bg-white  dark:bg-grid-md-white/[0.2]  relative flex items-center justify-center rounded-3xl">
+                        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+                        <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+                            <InfiniteSlider />
+                        </p>
+                    </div> */}
+
+                    {/* <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
+                        <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20">
+                            Aceternity
+                        </h1>
+                        <div className="w-[40rem] h-40 relative">
+                            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                            <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                            <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+                            <SparklesCore
+                                background="transparent"
+                                minSize={0.4}
+                                maxSize={1}
+                                particleDensity={1200}
+                                className="w-full h-full"
+                                particleColor="#FFFFFF"
+                            />
+
+                            <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+                        </div>
+                    </div> */}
+
+                    {/* <BackgroundBeams /> */}
+
+                    <div className="border border-black/[0.2] dark:border-white/[0.2] p-4 relative w-full h-full">
+                        <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+                        <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
+                        <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+                        <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+
+                        <EvervaultCard text="hover" />
+                    </div>
                 </div>
 
                 <div className="p-10 rounded-2xl text-accent_color 2xl:mt-24  bg-gradient flex flex-col gap-5 col-span-3 row-span-2 2xl:col-start-4 row-start-3 2xl:row-start-1">
@@ -132,10 +186,11 @@ export default function AboutPage() {
                         </svg>
                         Skills
                     </p>
-                    <div className="grid grid-cols-3 grid-rows-3 lg:gap-5 gap-2 w-full lg:p-10  text-neutral-300 font-semibold mt-12">
+                    <div className="grid grid-cols-3 grid-rows-3 lg:gap-5 gap-2 w-full lg:p-10  text-neutral-300 font-semibold mt-12"
+                    >
                         <motion.div
-                            variants={variants}
                             className="w-12 h-12 fixed rounded-full bg-white opacity-5 flex top-0 left-0 z-10 pointer-events-none"
+                            variants={variants}
                             animate={cursorVariant}
                             transition={spring}
                             ref={CursorRef}
@@ -153,6 +208,7 @@ export default function AboutPage() {
                             </motion.div>
 
                         </Link>
+                        {/* <HoveredButton link="https://nextjs.org/" Icon={NextJsLogo} title="Next.js" /> */}
 
 
                         <Link href="https://react.dev/">
@@ -238,33 +294,7 @@ export default function AboutPage() {
                     alt="Picture of the author"
                 >
                 </Image>
-                {/* <Carousel className="h-full "
-                    plugins={[
-                        Autoplay({
-                            delay: 5000,
-                        }),
-                    ]}
 
-                >
-                    <CarouselContent>
-                        {images.map((_, index) => (
-                            <CarouselItem key={index}>
-                                <Image
-                                    className='rounded-md mt-5'
-                                    src={images[index]}
-                                    width={300}
-                                    height={250}
-                                    quality={100}
-                                    alt="Picture of the author"
-                                >
-                                </Image>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
-
-                </Carousel> */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
@@ -302,7 +332,7 @@ export default function AboutPage() {
                 </Image>
                 {/* <div className='w-full row-start-3 col-span-2 bg-fas rounded-lg  h-full mt-5'></div> */}
             </div>
-            <p className={`${offBitRegular.className} lg:text-9xl text-6xl text-center  `}>How I like to work</p>
+            <p className={`${offBitBold.className} lg:text-9xl text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-400  `}>How I like to work</p>
             {/* <p className={`${offBitBold.className} text-3xl text-center `}>To implement the project successfully, I need a clear project brief from the client with the following details:</p> */}
 
             <div className="grid lg:grid-cols-6 grid-rows-2 gap-12  mt-24">
@@ -354,6 +384,7 @@ export default function AboutPage() {
                 </div>
             </div>
             <ButtonGooey />
+
         </>
     );
 }

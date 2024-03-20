@@ -27,7 +27,7 @@ import { LockClosedIcon } from "@radix-ui/react-icons";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 
-export default function CardSpotlight({title, description, content, Icon}) {
+export default function CardSpotlight({ title, description, content, Icon }) {
     const divRef = useRef(null);
     const [isFocused, setIsFocused] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -69,14 +69,13 @@ export default function CardSpotlight({title, description, content, Icon}) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className="relative w-full h-full rounded-3xl border border-neutral-800 bg-neutral-950 p-8"
-            whileHover={{ scale: 1.1, }}
-                   transition={{
-                    type: "spring",
-                    damping: 10,
-                    mass: 0.75,
-                    stiffness: 100,
-                }
-            }
+            whileHover={{ scale: 1.05, }}
+            transition={{
+                type: "spring",
+                damping: 10,
+                mass: 0.75,
+                stiffness: 100,
+            }}
         >
             <div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 rounded-3xl"
@@ -92,7 +91,7 @@ export default function CardSpotlight({title, description, content, Icon}) {
                 {title}
             </h3>
             <p className="text-sm text-neutral-400">
-               {content}
+                {content}
             </p>
         </motion.div>
     );

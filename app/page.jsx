@@ -10,8 +10,8 @@ import { useAnimation } from 'framer-motion';
 import { JetBrains_Mono } from 'next/font/google'
 import Section from '@/components/section'
 import Footer from '@/components/footer'
-
 import Globe from '@/components/globe'
+
 
 export const JetBrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
